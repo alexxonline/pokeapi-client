@@ -5,7 +5,7 @@ import App from "./App";
 import { MockApiClient } from "./services/MockApiClient"
 
 
-test("renders learn react link", async () => {
+test("renders a pikachu element", async () => {
   render(
     <ClientContext.Provider value={{client: new MockApiClient()}}>
       <App />
