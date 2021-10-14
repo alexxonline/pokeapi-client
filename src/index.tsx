@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import ClientContext from "./services/ClientContext";
+import reportWebVitals from "./reportWebVitals";
+import { HttpPokeApiClient } from "./services/PokeApiClient";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ClientContext.Provider value={{ client: new HttpPokeApiClient() }}>
+      <App />
+    </ClientContext.Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
